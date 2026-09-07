@@ -16,16 +16,16 @@ const pillars = [
 ];
 
 const featuredClients = [
-  { name: 'Outback Steakhouse', logo: '/marinox-assets/clientes/outback.png' },
-  { name: 'Multiplan', logo: '/marinox-assets/clientes/multiplan.png' },
-  { name: 'Queiroz Galvão', logo: '/marinox-assets/clientes/queiroz-galvao.png' },
-  { name: 'Fogo de Chão', logo: '/marinox-assets/clientes/fogo-de-chao.png' },
-  { name: 'Cobasi', logo: '/marinox-assets/clientes/cobasi.png' },
-  { name: 'Alcance Construtora', logo: '/marinox-assets/clientes/alcance.png' },
-  { name: 'Copacabana Palace', logo: '/marinox-assets/clientes/copacabana-palace.png' },
-  { name: 'Smart Fit', logo: '/marinox-assets/clientes/smartfit.png' },
-  { name: 'Colégio Santo Agostinho', logo: '/marinox-assets/clientes/santo-agostinho.png' },
-  { name: 'Restaurante Galezzo', logo: '/marinox-assets/clientes/galezzo.png' },
+  { name: 'Outback Steakhouse', logo: '/marinox-assets/clientes/outback.png', featured: true },
+  { name: 'Multiplan', logo: '/marinox-assets/clientes/multiplan.png', featured: true },
+  { name: 'Queiroz Galvão', logo: '/marinox-assets/clientes/queiroz-galvao.png', featured: true },
+  { name: 'Fogo de Chão', logo: '/marinox-assets/clientes/fogo-de-chao.png', featured: true },
+  { name: 'Cobasi', logo: '/marinox-assets/clientes/cobasi.png', featured: true },
+  { name: 'Alcance Construtora', logo: '/marinox-assets/clientes/alcance.png', featured: false },
+  { name: 'Copacabana Palace', logo: '/marinox-assets/clientes/copacabana-palace.png', featured: false },
+  { name: 'Smart Fit', logo: '/marinox-assets/clientes/smartfit.png', featured: true },
+  { name: 'Colégio Santo Agostinho', logo: '/marinox-assets/clientes/santo-agostinho.png', featured: true },
+  { name: 'Restaurante Galezzo', logo: '/marinox-assets/clientes/galezzo.png', featured: true },
 ];
 const process = ['Entendimento do projeto', 'Planejamento', 'Fabricação', 'Execução', 'Entrega'];
 
@@ -64,7 +64,7 @@ export default function Home() {
                       width={520}
                       height={190}
                       sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
-                      className="max-h-28 w-full object-contain sm:max-h-32"
+                      className={client.featured ? 'max-h-32 w-full scale-110 object-contain sm:max-h-36' : 'max-h-28 w-full object-contain sm:max-h-32'}
                     />
                   </div>
                 </div>

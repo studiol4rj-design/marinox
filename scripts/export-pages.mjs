@@ -62,6 +62,12 @@ function normalizePublicAssetUrls(html) {
   return html.replaceAll('/marinox-assets/', `${basePath}/marinox-assets/`);
 }
 
+function forceDocumentNavigationOnPages(html) {
+  const script = `<script data-github-pages-navigation>(function(){window.addEventListener('click',function(event){if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest('a[href]');if(!anchor||anchor.hasAttribute('download')||anchor.target&&anchor.target!=='_self')return;var url=new URL(anchor.href,window.location.href);if(url.origin!==window.location.origin||!url.pathname.startsWith('${basePath}'))return;if(url.pathname===window.location.pathname&&url.search===window.location.search&&url.hash)return;event.preventDefault();event.stopImmediatePropagation();window.location.assign(url.href);},true);})();</script>`;
+
+  return html.includes('</head>') ? html.replace('</head>', `${script}</head>`) : `${script}${html}`;
+}
+
 async function renderRoute(route) {
   const url = `${origin}${basePath}${route}`;
   const response = await fetch(url, { redirect: 'follow' });
@@ -76,6 +82,7 @@ async function renderRoute(route) {
   }
 
   html = normalizePublicAssetUrls(html);
+  html = forceDocumentNavigationOnPages(html);
 
   const destination = outputFileForRoute(route);
   await mkdir(path.dirname(destination), { recursive: true });

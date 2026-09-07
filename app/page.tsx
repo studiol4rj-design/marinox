@@ -30,7 +30,7 @@ export default function Home() {
             height={1280}
             priority
             sizes="100vw"
-            className="absolute left-0 top-0 h-auto w-full max-w-none"
+            className="absolute left-0 top-0 h-auto w-full max-w-none md:-top-[12vw] lg:-top-[14vw] xl:-top-[15vw]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/55 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-white/5 via-transparent to-transparent" />

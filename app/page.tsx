@@ -21,7 +21,7 @@ const featuredClients = [
   { name: 'Queiroz Galvão', logo: '/marinox-assets/clientes/queiroz-galvao.png' },
   { name: 'Fogo de Chão', logo: '/marinox-assets/clientes/fogo-de-chao.png' },
   { name: 'Cobasi', logo: '/marinox-assets/clientes/cobasi.png' },
-  { name: 'Alcance Engenharia', logo: '/marinox-assets/clientes/alcance.png' },
+  { name: 'Alcance Construtora', logo: '/marinox-assets/clientes/alcance.png' },
   { name: 'Copacabana Palace', logo: '/marinox-assets/clientes/copacabana-palace.png' },
   { name: 'Smart Fit', logo: '/marinox-assets/clientes/smartfit.png' },
   { name: 'Colégio Santo Agostinho', logo: '/marinox-assets/clientes/santo-agostinho.png' },
@@ -57,9 +57,14 @@ export default function Home() {
             <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
               {featuredClients.map((client) => (
                 <div key={client.name} className="flex h-32 items-center justify-center px-1 sm:h-36">
-                  <div className="relative h-24 w-full sm:h-28">
-                    <Image src={client.logo} alt={`Logomarca ${client.name}`} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 32vw, 49vw" className="object-contain" />
-                  </div>
+                  <Image
+                    src={client.logo}
+                    alt={`Logomarca ${client.name}`}
+                    width={420}
+                    height={150}
+                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 32vw, 49vw"
+                    className="h-auto max-h-24 w-auto max-w-full object-contain sm:max-h-28"
+                  />
                 </div>
               ))}
             </div>

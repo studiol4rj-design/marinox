@@ -137,3 +137,27 @@ body {
 ::selection {
   background: color-mix(in oklch, var(--primary) 18%, white);
 }
+
+@media (max-width: 639px) {
+  main > section[class*='isolate'][class*='overflow-hidden'] > div:first-child {
+    aspect-ratio: auto;
+    min-height: 880px;
+  }
+
+  main > section[class*='isolate'][class*='overflow-hidden'] > div:first-child > img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main > section[class*='isolate'][class*='overflow-hidden'] > div:first-child > div:nth-of-type(3) {
+    min-height: 880px;
+    align-items: flex-start;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  main > section[class*='isolate'][class*='overflow-hidden'] h1 {
+    font-size: clamp(3rem, 14vw, 3.5rem);
+    line-height: 0.98;
+  }
+}

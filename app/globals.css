@@ -49,7 +49,8 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: only light;
+  supported-color-schemes: light;
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.16 0 0);
   --card: oklch(1 0 0);
@@ -86,8 +87,9 @@
 
 html,
 body {
-  background: #fff;
-  color-scheme: light only;
+  background-color: #fff !important;
+  color-scheme: only light !important;
+  supported-color-schemes: light;
 }
 
 body {
@@ -104,6 +106,22 @@ body {
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: only light !important;
+    background-color: #fff !important;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    color-scheme: only light !important;
   }
 }
 

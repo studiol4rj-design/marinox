@@ -43,8 +43,8 @@ export default function ContactPage() {
         </section>
         <section className="border-t border-zinc-200 bg-zinc-50 px-5 py-12 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_.8fr] md:items-center">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-white">
-              <Image src="/marinox-assets/assets-images-backgrounds-map.png" alt="Área de atendimento da Marinox" fill sizes="(min-width: 768px) 55vw, 100vw" className="object-cover" />
+            <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-zinc-200 bg-zinc-300">
+              <Image src="/marinox-assets/assets-images-backgrounds-map.png" alt="Área de atendimento da Marinox" fill sizes="(min-width: 768px) 55vw, 100vw" className="object-cover opacity-70" />
             </div>
             <div>
               <MessageCircle className="mb-4 size-7 text-red-700" />

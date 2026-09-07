@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAGES_DEPLOY: 'true'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,11 +33,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Use Vinext static-export fixes
-        run: npm install --no-save --legacy-peer-deps vinext@1.0.0-beta.6 vite@8.2.0 @vitejs/plugin-rsc@0.5.34 react@19.2.8 react-dom@19.2.8 react-server-dom-webpack@19.2.8
+      - name: Lint
+        run: npm run lint
 
-      - name: Build static site
+      - name: Build application
         run: npm run build
+
+      - name: Export static pages
+        run: npm run build:pages
+
+      - name: Validate Pages artifact
+        run: |
+          test -f pages-dist/index.html
+          test -f pages-dist/.nojekyll
+          grep -q '/marinox' pages-dist/index.html
+          echo "GitHub Pages artifact validated."
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -44,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: pages-dist
 
   deploy:
     environment:
@@ -52,6 +63,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

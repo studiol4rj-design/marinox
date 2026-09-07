@@ -2,10 +2,10 @@ export const contact = {
   whatsappLabel: '(21) 2303-9875',
   whatsappNumber: '552123039875',
   email: 'comercial@marinoxmetalurgica.com.br',
-  address: 'Endereço a confirmar com a Marinox',
+  address: 'Atendimento em todo o Brasil',
   instagram: '#',
   facebook: '#',
-  mapLabel: 'Mapa provisório; substituir pelo endereço definitivo.',
+  mapLabel: 'Atendimento nacional',
 };
 
 export const navItems = [
@@ -16,9 +16,6 @@ export const navItems = [
   { href: '/conteudo', label: 'Conteúdo' },
   { href: '/contato', label: 'Contato' },
 ];
-
-export const assetNote =
-  'Material provisório recuperado do site público atual da Marinox; substituir pelos arquivos originais do cliente.';
 
 export const solutions = [
   {
@@ -76,9 +73,9 @@ export const projects = [
     slug: 'mobiliarios-estruturas-restaurante',
     title: 'Mobiliários e estruturas',
     category: 'Artefatos metálicos',
-    status: 'Conteúdo temporário',
+    status: 'Projeto em destaque',
     description:
-      'Registro provisório de projeto com mobiliários e estruturas metálicas. Dados finais devem ser confirmados pela Marinox.',
+      'Soluções em mobiliário e estruturas metálicas desenvolvidas para integrar funcionalidade, acabamento e execução sob medida.',
     image: '/marinox-assets/assets-images-sliders-1.jpg',
     gallery: [
       '/marinox-assets/assets-images-portfolio-grid-mobiliario.jpeg',
@@ -90,9 +87,9 @@ export const projects = [
     slug: 'corrimao-guarda-corpo',
     title: 'Corrimão e guarda-corpo',
     category: 'Esquadrias de ferro',
-    status: 'Conteúdo temporário',
+    status: 'Projeto em destaque',
     description:
-      'Exemplo de estrutura para apresentar registros de corrimão e guarda-corpo enquanto as informações completas são reunidas.',
+      'Execução de corrimãos e guarda-corpos com foco em segurança, integração ao ambiente e qualidade de acabamento.',
     image: '/marinox-assets/assets-images-sliders-2.jpg',
     gallery: [
       '/marinox-assets/assets-images-portfolio-grid-Escada-rolante.jpeg',
@@ -104,9 +101,9 @@ export const projects = [
     slug: 'cobertura-portas',
     title: 'Cobertura e portas',
     category: 'Estruturas metálicas',
-    status: 'Conteúdo temporário',
+    status: 'Projeto em destaque',
     description:
-      'Página preparada para receber fotos, vídeo, descrição e solução aplicada em projetos de cobertura e portas.',
+      'Estruturas e fechamentos metálicos executados para atender às necessidades de proteção, acesso e integração arquitetônica.',
     image: '/marinox-assets/assets-images-sliders-3.jpg',
     gallery: [
       '/marinox-assets/assets-images-portfolio-grid-cobertura.jpeg',
@@ -123,7 +120,7 @@ export const articles = [
     title: 'Como preparar as informações para um orçamento de estrutura metálica',
     category: 'Orçamento',
     excerpt:
-      'Um conteúdo demonstrativo para orientar futuras pautas comerciais, sem substituir a validação técnica da Marinox.',
+      'Informações bem organizadas ajudam a tornar o primeiro contato mais objetivo e facilitam a análise inicial da demanda.',
     body: [
       'Para solicitar um orçamento, reúna o objetivo do projeto, localização, prazo desejado e arquivos disponíveis, como plantas, referências ou registros da área.',
       'Quando houver dúvidas técnicas, a equipe da Marinox poderá orientar o próximo passo comercial antes da execução.',
@@ -134,10 +131,10 @@ export const articles = [
     title: 'Execução de projetos metálicos com atenção a prazo e qualidade',
     category: 'Projetos',
     excerpt:
-      'Base editorial provisória para reforçar atendimento, planejamento e acompanhamento de execução.',
+      'Planejamento, comunicação e acompanhamento são pontos importantes para uma execução eficiente em projetos metálicos.',
     body: [
-      'Projetos metálicos exigem alinhamento entre necessidade, planejamento e execução. A Marinox posiciona seu atendimento nesses pilares.',
-      'Este artigo deve ser revisado com exemplos reais antes da publicação final em produção.',
+      'Projetos metálicos exigem alinhamento entre necessidade, planejamento e execução. A Marinox orienta seu atendimento por clareza, prazo e qualidade.',
+      'Cada demanda deve ser avaliada de acordo com suas características, escopo e necessidades de execução.',
     ],
   },
 ];
@@ -146,12 +143,12 @@ export const faqs = [
   {
     question: 'A Marinox atende fora do Rio de Janeiro?',
     answer:
-      'Sim. O briefing informa atendimento em todo o Brasil. A logística de cada projeto deve ser avaliada no orçamento.',
+      'Sim. A Marinox atende demandas em todo o Brasil, com avaliação da logística e do escopo de cada projeto.',
   },
   {
     question: 'Posso solicitar orçamento sem ter um projeto completo?',
     answer:
-      'Sim. O contato inicial pode começar com uma descrição da necessidade. Arquivos técnicos ajudam, mas a etapa comercial pode orientar os próximos passos.',
+      'Sim. O contato inicial pode começar com uma descrição da necessidade. Plantas, referências e outros arquivos ajudam a tornar a análise mais objetiva.',
   },
   {
     question: 'Quais soluções a empresa executa?',
@@ -159,8 +156,8 @@ export const faqs = [
       'Estruturas metálicas, esquadrias de ferro, esquadrias de alumínio e artefatos metálicos.',
   },
   {
-    question: 'O site já contém projetos reais confirmados?',
+    question: 'Como iniciar uma solicitação de orçamento?',
     answer:
-      'As imagens foram recuperadas do site público atual da Marinox como material provisório. Títulos, descrições e detalhes devem ser validados pelo cliente.',
+      'Envie as principais informações do projeto pelo formulário de contato ou WhatsApp. A equipe poderá orientar os próximos passos a partir da demanda apresentada.',
   },
 ];

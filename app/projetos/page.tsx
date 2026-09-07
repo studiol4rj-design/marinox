@@ -8,7 +8,7 @@ import { projects } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'Projetos',
-  description: 'Portfólio da Marinox preparado para fotos, galerias, vídeos e soluções aplicadas.',
+  description: 'Projetos e aplicações da Marinox em estruturas, esquadrias e soluções metálicas.',
 };
 
 export default function ProjectsPage() {
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Projetos" title="Portfólio técnico para obras e soluções metálicas" description="A área está preparada para conteúdo real da Marinox, com imagens provisórias recuperadas do site atual." />
+            <SectionTitle eyebrow="Projetos" title="Soluções metálicas aplicadas a diferentes demandas" description="Conheça trabalhos e aplicações que representam a atuação da Marinox em estruturas, esquadrias e artefatos metálicos." />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
             </div>

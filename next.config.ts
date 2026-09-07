@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+const isGitHubPages = process.env.GITHUB_PAGES_DEPLOY === 'true';
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  ...(isGitHubPages ? { output: 'export' as const } : {}),
   basePath: isGitHubPages ? '/marinox' : '',
   trailingSlash: true,
   images: {

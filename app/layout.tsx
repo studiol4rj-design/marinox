@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -11,6 +11,11 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#ffffff',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://marinox-metalurgica.tuned-civet-0855.chatgpt.site'),

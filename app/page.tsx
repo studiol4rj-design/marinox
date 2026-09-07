@@ -22,36 +22,36 @@ export default function Home() {
     <>
       <SiteHeader />
       <main>
-        <section className="relative isolate min-h-[620px] overflow-hidden bg-zinc-100 md:min-h-[720px]">
-          <div className="absolute inset-0 bg-zinc-100">
-            <Image src="/marinox-assets/copa-palace.jpeg" alt="" fill sizes="100vw" aria-hidden="true" className="scale-105 object-cover object-top opacity-20 blur-md" />
-          </div>
-          <div className="absolute inset-y-0 right-0 w-full md:w-[72%]">
-            <Image
-              src="/marinox-assets/copa-palace.jpeg"
-              alt="Projeto executado pela Metalúrgica Marinox com corrimão em inox e vista para o mar"
-              fill
-              priority
-              sizes="(min-width: 768px) 72vw, 100vw"
-              className="object-contain object-right"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent md:from-white md:via-white/75 md:to-transparent" />
-
-          <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-20 md:min-h-[720px] lg:px-8">
-            <div className="max-w-3xl">
-              <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-red-700">Metalúrgica Marinox · Desde 2013</p>
-              <h1 className="text-5xl font-bold leading-[0.96] tracking-[-0.045em] text-zinc-950 sm:text-6xl md:text-7xl lg:text-[5rem]">
-                Soluções em metal.
-                <span className="block text-red-700">Projetos que ganham forma.</span>
-              </h1>
-              <p className="mt-7 max-w-xl text-lg font-medium leading-8 text-zinc-800 md:text-xl">
-                Estruturas metálicas, esquadrias e artefatos sob medida para empresas, construtoras e projetos que exigem execução com atendimento, prazo e qualidade.
-              </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contato" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white shadow-lg shadow-red-950/10 transition hover:bg-red-800">Solicite um orçamento <ArrowRight className="size-4" /></Link>
-                <Link href="/projetos" className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-400/70 bg-white/80 px-6 text-sm font-semibold text-zinc-950 backdrop-blur-sm transition hover:bg-white">Conheça nossos projetos</Link>
+        <section className="relative overflow-hidden border-b border-zinc-200 bg-white">
+          <div className="mx-auto grid min-h-[620px] max-w-7xl md:grid-cols-[47%_53%] md:min-h-[680px]">
+            <div className="relative z-10 flex items-center px-5 py-16 md:px-8 lg:px-10">
+              <div className="max-w-xl">
+                <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-red-700">Metalúrgica Marinox · Desde 2013</p>
+                <h1 className="text-5xl font-bold leading-[0.96] tracking-[-0.045em] text-zinc-950 sm:text-6xl lg:text-[4.6rem]">
+                  Soluções em metal.
+                  <span className="block text-red-700">Projetos que ganham forma.</span>
+                </h1>
+                <p className="mt-7 max-w-lg text-lg font-medium leading-8 text-zinc-700">
+                  Estruturas metálicas, esquadrias e artefatos sob medida para empresas, construtoras e projetos que exigem execução com atendimento, prazo e qualidade.
+                </p>
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <Link href="/contato" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white shadow-lg shadow-red-950/10 transition hover:bg-red-800">Solicite um orçamento <ArrowRight className="size-4" /></Link>
+                  <Link href="/projetos" className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-300 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50">Conheça nossos projetos</Link>
+                </div>
               </div>
+            </div>
+
+            <div className="relative min-h-[420px] overflow-hidden bg-zinc-100 md:min-h-[680px]">
+              <Image
+                src="/marinox-assets/copa-palace.jpeg"
+                alt="Projeto executado pela Metalúrgica Marinox com corrimão em inox e vista para o mar"
+                width={720}
+                height={1280}
+                priority
+                sizes="(min-width: 768px) 53vw, 100vw"
+                className="absolute left-0 top-0 h-auto w-full max-w-none"
+              />
+              <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-white to-transparent md:block" />
             </div>
           </div>
           <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-transparent" />

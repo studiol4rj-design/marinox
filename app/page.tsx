@@ -54,17 +54,19 @@ export default function Home() {
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A confiança de empresas de referência em diversos segmentos reforça o compromisso da Marinox com atendimento, prazo e qualidade em cada projeto.</p>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+            <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">
               {featuredClients.map((client) => (
-                <div key={client.name} className="flex h-32 items-center justify-center px-1 sm:h-36">
-                  <Image
-                    src={client.logo}
-                    alt={`Logomarca ${client.name}`}
-                    width={420}
-                    height={150}
-                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 32vw, 49vw"
-                    className="h-auto max-h-24 w-auto max-w-full object-contain sm:max-h-28"
-                  />
+                <div key={client.name} className="flex h-36 items-center justify-center sm:h-40">
+                  <div className="flex h-28 w-full items-center justify-center sm:h-32">
+                    <Image
+                      src={client.logo}
+                      alt={`Logomarca ${client.name}`}
+                      width={520}
+                      height={190}
+                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+                      className="max-h-28 w-full object-contain sm:max-h-32"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

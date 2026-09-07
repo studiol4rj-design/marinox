@@ -6,7 +6,7 @@ import { CtaBand } from '@/components/cta-band';
 import { SectionTitle } from '@/components/section-title';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { assetNote, projects, solutions } from '@/lib/site-data';
+import { projects, solutions } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'Soluções',
@@ -20,7 +20,7 @@ export default function SolutionsPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Soluções" title="Especialidades preparadas para projetos sob medida" description="Cada área foi estruturada para receber descrição, aplicações, fotos, projetos relacionados e CTA de orçamento." />
+            <SectionTitle eyebrow="Soluções" title="Soluções sob medida para diferentes projetos" description="Estruturas, esquadrias e artefatos metálicos desenvolvidos para atender às necessidades de empresas, construtoras e projetos de arquitetura." />
           </div>
         </section>
         <section className="px-5 pb-16 lg:px-8">
@@ -28,7 +28,7 @@ export default function SolutionsPage() {
             {solutions.map((solution) => (
               <article id={solution.slug} key={solution.slug} className="grid gap-6 rounded-lg border border-zinc-200 bg-zinc-50 p-5 md:grid-cols-[.85fr_1fr] md:items-center">
                 <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-zinc-100">
-                  <Image src={solution.image} alt="" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
+                  <Image src={solution.image} alt={solution.title} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-red-700">Solução</p>
@@ -39,13 +39,12 @@ export default function SolutionsPage() {
                   </ul>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link href="/contato" className="inline-flex items-center gap-2 font-semibold text-red-700">
-                      Solicitar orçamento <ArrowRight className="size-4" />
+                      Falar sobre esta solução <ArrowRight className="size-4" />
                     </Link>
                     <Link href="/projetos" className="inline-flex items-center gap-2 font-semibold text-zinc-700">
                       Ver projetos relacionados
                     </Link>
                   </div>
-                  <p className="mt-5 text-xs text-zinc-500">{assetNote}</p>
                 </div>
               </article>
             ))}
@@ -54,7 +53,7 @@ export default function SolutionsPage() {
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-12 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-semibold text-zinc-950">Projetos relacionados</h2>
-            <p className="mt-3 text-zinc-600">{projects.length} páginas demonstrativas já preparadas para receber dados reais.</p>
+            <p className="mt-3 text-zinc-600">Conheça {projects.length} aplicações em destaque e veja como diferentes soluções metálicas podem atender às necessidades de cada projeto.</p>
           </div>
         </section>
         <CtaBand />

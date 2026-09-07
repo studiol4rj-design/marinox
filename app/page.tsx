@@ -7,12 +7,24 @@ import { SectionTitle } from '@/components/section-title';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { SolutionCard } from '@/components/solution-card';
-import { assetNote, projects, solutions } from '@/lib/site-data';
+import { projects, solutions } from '@/lib/site-data';
 
 const pillars = [
-  { title: 'Atendimento', text: 'Escuta comercial clara para entender a demanda e orientar o próximo passo.', icon: Handshake },
-  { title: 'Prazo', text: 'Planejamento de execução com atenção à pontualidade acordada para cada projeto.', icon: Clock },
-  { title: 'Qualidade', text: 'Entrega com foco em acabamento, uso adequado e consistência no resultado.', icon: ShieldCheck },
+  {
+    title: 'Atendimento',
+    text: 'Contato próximo e objetivo para compreender cada demanda e conduzir o projeto com clareza desde o início.',
+    icon: Handshake,
+  },
+  {
+    title: 'Prazo',
+    text: 'Planejamento e acompanhamento voltados ao cumprimento dos compromissos assumidos em cada etapa da execução.',
+    icon: Clock,
+  },
+  {
+    title: 'Qualidade',
+    text: 'Execução cuidadosa, atenção aos detalhes e compromisso com um resultado compatível com as necessidades do projeto.',
+    icon: ShieldCheck,
+  },
 ];
 
 const process = ['Entendimento do projeto', 'Planejamento', 'Fabricação', 'Execução', 'Entrega'];
@@ -30,11 +42,11 @@ export default function Home() {
                 Soluções em metal. Projetos que ganham forma.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
-                Desenvolvimento e execução de estruturas metálicas, esquadrias e artefatos sob medida para projetos em todo o Brasil.
+                Estruturas metálicas, esquadrias e artefatos sob medida para empresas, construtoras e projetos que exigem execução com atendimento, prazo e qualidade.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contato" className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-red-700 px-5 text-sm font-medium text-white transition hover:bg-red-800">
-                  Solicite um orçamento <ArrowRight className="size-4" />
+                  Fale sobre seu projeto <ArrowRight className="size-4" />
                 </Link>
                 <Link href="/projetos" className="inline-flex h-11 items-center justify-center rounded-lg border border-zinc-300 px-5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50">
                   Conheça nossos projetos
@@ -46,14 +58,13 @@ export default function Home() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-zinc-100 shadow-2xl shadow-zinc-900/10 md:aspect-[5/6]">
                 <Image src="/marinox-assets/assets-images-sliders-3.jpg" alt="Obra metálica da Marinox" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
               </div>
-              <p className="mt-3 text-xs text-zinc-500">{assetNote}</p>
             </div>
           </div>
         </section>
 
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Soluções" title="Execução técnica para demandas em metal" description="Áreas preparadas para receber fotos, descritivos e projetos relacionados com facilidade." />
+            <SectionTitle eyebrow="Soluções" title="Execução sob medida para projetos em metal" description="Soluções para diferentes demandas de construção, arquitetura e ambientes corporativos, com atuação em todo o Brasil." />
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {solutions.map((solution) => <SolutionCard key={solution.slug} solution={solution} />)}
             </div>
@@ -62,7 +73,7 @@ export default function Home() {
 
         <section className="bg-white px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.85fr_1fr] md:items-start">
-            <SectionTitle eyebrow="Posicionamento" title="Parceira para solução e execução de projetos" description="A Marinox atua desde 02/01/2013 realizando projetos e executando soluções para clientes que precisam de atendimento, pontualidade e qualidade." />
+            <SectionTitle eyebrow="Compromisso" title="Uma parceria orientada à execução" description="Desde 2013, a Marinox transforma necessidades de projeto em soluções metálicas com foco em relacionamento, pontualidade e qualidade." />
             <div className="grid gap-4">
               {pillars.map((pillar) => {
                 const Icon = pillar.icon;
@@ -81,11 +92,10 @@ export default function Home() {
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.9fr_1fr] md:items-center">
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-zinc-100">
-              <Image src="/marinox-assets/assets-images-backgrounds-2.jpg" alt="Registro provisório institucional da Marinox" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+              <Image src="/marinox-assets/assets-images-backgrounds-2.jpg" alt="Estrutura e execução da Marinox" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
             </div>
             <div>
-              <SectionTitle eyebrow="Sobre" title="Uma metalúrgica orientada à execução" description="A empresa atua desde 2013 fabricando estruturas metálicas, esquadrias e artefatos de metais, com atendimento nacional e foco em transformar necessidades de projeto em solução executada." />
-              <p className="mt-5 text-sm text-zinc-500">{assetNote}</p>
+              <SectionTitle eyebrow="Sobre" title="Experiência aplicada à solução de projetos" description="A Marinox atua desde 2013 na fabricação de estruturas metálicas, esquadrias e artefatos de metais, atendendo demandas de diferentes portes em todo o Brasil." />
             </div>
           </div>
         </section>
@@ -93,7 +103,7 @@ export default function Home() {
         <section className="bg-zinc-50 px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 md:grid-cols-[1fr_.8fr] md:items-end">
-              <SectionTitle eyebrow="Projetos" title="Portfólio preparado para fotos, vídeos e galerias" description="Os itens abaixo usam materiais provisórios do site atual e devem ser revisados com os nomes e detalhes finais de cada obra." />
+              <SectionTitle eyebrow="Projetos" title="Soluções que saem do projeto e chegam à execução" description="Conheça alguns dos trabalhos e aplicações que representam a atuação da Marinox em estruturas, esquadrias e artefatos metálicos." />
               <Link href="/projetos" className="inline-flex items-center gap-2 font-semibold text-red-700 md:justify-self-end">
                 Ver todos os projetos <ArrowRight className="size-4" />
               </Link>
@@ -106,7 +116,7 @@ export default function Home() {
 
         <section className="bg-white px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Processo" title="Do entendimento à entrega" description="Fluxo comercial e produtivo apresentado de forma objetiva, sem detalhes técnicos ainda não confirmados pelo cliente." />
+            <SectionTitle eyebrow="Processo" title="Do entendimento à entrega" description="Um fluxo objetivo para conduzir cada demanda desde o primeiro contato até a execução e entrega do projeto." />
             <div className="mt-10 grid gap-4 md:grid-cols-5">
               {process.map((step, index) => (
                 <div key={step} className="rounded-lg border border-zinc-200 bg-white p-5">

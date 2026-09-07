@@ -46,7 +46,35 @@ export default function Home() {
 
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-16 lg:px-8"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Soluções" title="Execução sob medida para projetos em metal" description="Soluções para diferentes demandas de construção, arquitetura e ambientes corporativos, com atuação em todo o Brasil." /><div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{solutions.map((solution) => <SolutionCard key={solution.slug} solution={solution} />)}</div></div></section>
 
-        <section className="bg-white px-5 py-20 lg:px-8"><div className="mx-auto max-w-7xl"><div className="mx-auto max-w-4xl text-center"><p className="text-sm font-bold uppercase tracking-[0.22em] text-red-700">Compromisso</p><h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">Parceria com grandes marcas <span className="text-red-700">em projetos de alto padrão.</span></h2><p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A confiança de empresas de referência em diversos segmentos reforça o compromisso da Marinox com atendimento, prazo e qualidade em cada projeto.</p></div><div className="mt-12 grid grid-cols-2 border-l border-t border-zinc-200 sm:grid-cols-3 lg:grid-cols-5">{featuredClients.map((client) => <div key={client.name} className="flex h-32 items-center justify-center border-b border-r border-zinc-200 bg-white p-5"><div className="relative h-20 w-full"><Image src={client.logo} alt={`Logomarca ${client.name}`} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" className="object-contain" /></div></div>)}</div><div className="mt-14 grid gap-6 md:grid-cols-3">{pillars.map((pillar) => { const Icon = pillar.icon; return <div key={pillar.title} className="text-center"><span className="mx-auto flex size-16 items-center justify-center rounded-full bg-red-50"><Icon className="size-7 text-red-700" /></span><h3 className="mt-5 text-xl font-semibold text-zinc-950">{pillar.title}</h3><p className="mx-auto mt-2 max-w-sm leading-7 text-zinc-600">{pillar.text}</p></div>; })}</div><div className="mt-10 text-center"><Link href="/projetos" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white transition hover:bg-red-800">Conheça nossos projetos <ArrowRight className="size-4" /></Link></div></div></section>
+        <section className="bg-white px-5 py-20 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-red-700">Compromisso</p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">Parceria com grandes marcas <span className="text-red-700">em projetos de alto padrão.</span></h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A confiança de empresas de referência em diversos segmentos reforça o compromisso da Marinox com atendimento, prazo e qualidade em cada projeto.</p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10">
+              {featuredClients.map((client) => (
+                <div key={client.name} className="flex h-24 items-center justify-center px-3 sm:h-28">
+                  <div className="relative h-16 w-full sm:h-20">
+                    <Image src={client.logo} alt={`Logomarca ${client.name}`} fill sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 46vw" className="object-contain" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-16 h-px max-w-5xl bg-zinc-200" />
+
+            <div className="mt-14 grid gap-10 md:grid-cols-3">
+              {pillars.map((pillar) => {
+                const Icon = pillar.icon;
+                return <div key={pillar.title} className="text-center"><span className="mx-auto flex size-16 items-center justify-center rounded-full bg-red-50"><Icon className="size-7 text-red-700" /></span><h3 className="mt-5 text-xl font-semibold text-zinc-950">{pillar.title}</h3><p className="mx-auto mt-2 max-w-sm leading-7 text-zinc-600">{pillar.text}</p></div>;
+              })}
+            </div>
+            <div className="mt-10 text-center"><Link href="/projetos" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white transition hover:bg-red-800">Conheça nossos projetos <ArrowRight className="size-4" /></Link></div>
+          </div>
+        </section>
 
         <section className="border-y border-zinc-200 bg-white px-5 py-20 lg:px-8"><div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_.95fr] md:items-center"><div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-zinc-100"><Image src="/marinox-assets/ilha-plaza-sobre.png" alt="Projeto executado pela Marinox no Ilha Plaza" fill sizes="(min-width: 768px) 52vw, 100vw" className="object-cover" /></div><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-red-700">Sobre</p><h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">Experiência aplicada à <span className="text-red-700">solução de projetos</span></h2><p className="mt-6 text-lg leading-8 text-zinc-600">A Marinox atua desde 2013 na fabricação de estruturas metálicas, esquadrias e artefatos de metais, atendendo demandas de diferentes portes em todo o Brasil.</p><p className="mt-5 text-lg leading-8 text-zinc-600">Unimos experiência de execução, atendimento próximo e compromisso com a qualidade para transformar necessidades específicas em soluções metálicas funcionais, bem acabadas e adequadas a cada projeto.</p><Link href="/sobre" className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white transition hover:bg-red-800">Conheça nossa história <ArrowRight className="size-4" /></Link></div></div></section>
         <section className="bg-zinc-50 px-5 py-16 lg:px-8"><div className="mx-auto max-w-7xl"><div className="grid gap-8 md:grid-cols-[1fr_.8fr] md:items-end"><SectionTitle eyebrow="Projetos" title="Soluções que saem do projeto e chegam à execução" description="Conheça alguns dos trabalhos e aplicações que representam a atuação da Marinox em estruturas, esquadrias e artefatos metálicos." /><Link href="/projetos" className="inline-flex items-center gap-2 font-semibold text-red-700 md:justify-self-end">Ver todos os projetos <ArrowRight className="size-4" /></Link></div><div className="mt-10 grid gap-5 md:grid-cols-3">{projects.map((project) => <ProjectCard key={project.slug} project={project} />)}</div></div></section>

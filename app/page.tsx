@@ -29,10 +29,10 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[50%_14%]"
+            className="object-fill"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent md:via-white/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/5 via-transparent to-transparent" />
 
           <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-16 md:min-h-[680px] lg:px-8">
             <div className="max-w-3xl">

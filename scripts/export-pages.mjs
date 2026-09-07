@@ -38,19 +38,19 @@ async function exists(target) {
 
 async function waitForServer() {
   const deadline = Date.now() + 45_000;
-  let lastError;
+  let lastErrorMessage = 'timeout';
 
   while (Date.now() < deadline) {
     try {
       const response = await fetch(`${origin}${basePath}/`, { redirect: 'manual' });
       if (response.status > 0) return;
     } catch (error) {
-      lastError = error;
+      lastErrorMessage = error instanceof Error ? error.message : 'erro desconhecido';
     }
     await new Promise((resolve) => setTimeout(resolve, 500));
   }
 
-  throw new Error(`Servidor de prerender nao respondeu a tempo: ${lastError ?? 'timeout'}`);
+  throw new Error(`Servidor de prerender nao respondeu a tempo: ${lastErrorMessage}`);
 }
 
 function outputFileForRoute(route) {

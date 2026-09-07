@@ -22,19 +22,20 @@ export default function Home() {
     <>
       <SiteHeader />
       <main>
-        <section className="relative isolate min-h-[620px] overflow-hidden bg-zinc-100 md:min-h-[680px]">
+        <section className="relative isolate min-h-[560px] overflow-hidden bg-zinc-100 sm:min-h-[620px] md:min-h-[680px]">
           <Image
             src="/marinox-assets/copa-palace.jpeg"
             alt="Projeto executado pela Metalúrgica Marinox com corrimão em inox e vista para o mar"
-            fill
+            width={720}
+            height={1280}
             priority
             sizes="100vw"
-            className="object-fill"
+            className="absolute left-0 top-0 h-auto w-full max-w-none md:-top-[24vw] lg:-top-[30vw] xl:-top-[32vw]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/55 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-white/5 via-transparent to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-16 md:min-h-[680px] lg:px-8">
+          <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-center px-5 py-16 sm:min-h-[620px] md:min-h-[680px] lg:px-8">
             <div className="max-w-3xl">
               <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-red-700">Metalúrgica Marinox · Desde 2013</p>
               <h1 className="text-5xl font-bold leading-[0.96] tracking-[-0.045em] text-zinc-950 sm:text-6xl md:text-7xl lg:text-[5rem]">

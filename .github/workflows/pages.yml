@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES_DEPLOY: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Use Vinext static-export fixes
-        run: npm install --no-save vinext@1.0.0-beta.6 vite@8.2.0 react@19.2.8 react-dom@19.2.8 react-server-dom-webpack@19.2.8
+        run: npm install --no-save --legacy-peer-deps vinext@1.0.0-beta.6 vite@8.2.0 @vitejs/plugin-rsc@0.5.34 react@19.2.8 react-dom@19.2.8 react-server-dom-webpack@19.2.8
 
       - name: Build static site
         run: npm run build

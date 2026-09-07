@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_.8fr_.8fr] lg:px-8">
         <div>
           <Image
-            src="/marinox-assets/assets-images-logo-Logo-Marinox.png"
+            src="/marinox-assets/logo.png"
             alt="Metalúrgica Marinox"
             width={146}
             height={44}
@@ -38,9 +38,9 @@ export function SiteFooter() {
             <a className="flex items-center gap-2 transition hover:text-red-700" href={`mailto:${contact.email}`}>
               <Mail className="size-4" /> {contact.email}
             </a>
-            <span className="flex items-center gap-2">
-              <MapPin className="size-4" /> {contact.address}
-            </span>
+            <a className="flex items-start gap-2 transition hover:text-red-700" href={contact.mapUrl} target="_blank" rel="noreferrer">
+              <MapPin className="mt-0.5 size-4 shrink-0" /> {contact.address}
+            </a>
           </div>
         </div>
       </div>

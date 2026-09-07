@@ -37,14 +37,23 @@ export default function Home() {
         <section className="relative isolate min-h-[620px] overflow-hidden bg-zinc-100 md:min-h-[720px]">
           <Image
             src="/marinox-assets/copa-palace.jpeg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            aria-hidden="true"
+            className="scale-105 object-cover object-center opacity-30 blur-sm"
+          />
+          <Image
+            src="/marinox-assets/copa-palace.jpeg"
             alt="Projeto executado pela Metalúrgica Marinox"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[62%_58%] md:object-[68%_55%]"
+            className="object-contain object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/25 via-transparent to-white/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/78 to-white/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-white/5" />
 
           <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-20 md:min-h-[720px] lg:px-8">
             <div className="max-w-4xl">

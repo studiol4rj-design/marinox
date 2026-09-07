@@ -44,8 +44,45 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-zinc-400">
-        © 2026 Metalúrgica Marinox. Site institucional em primeira versão.
+
+      <div className="border-t border-white/10 px-5 py-5 text-xs text-zinc-400 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+          <div className="leading-6">
+            <span>© 2026 Metalúrgica Marinox. Todos os direitos reservados.</span>
+            <span className="mx-2 hidden md:inline">·</span>
+            <span className="block md:inline">
+              Desenvolvido e mantido por{' '}
+              <a
+                href="https://www.studiol4.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-red-500 transition hover:text-red-400"
+              >
+                Studio L4
+              </a>
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end">
+            <a
+              href="https://fppericiasjudiciais.com.br/privacidade.html"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-white"
+            >
+              Política de Privacidade
+            </a>
+            <span className="text-zinc-600">|</span>
+            <a
+              href="https://fppericiasjudiciais.com.br/termos.html"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-white"
+            >
+              Termos de Uso
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

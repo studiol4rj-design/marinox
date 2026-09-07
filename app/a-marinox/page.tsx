@@ -4,7 +4,6 @@ import { CtaBand } from '@/components/cta-band';
 import { SectionTitle } from '@/components/section-title';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { assetNote } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'A Marinox',
@@ -23,20 +22,17 @@ export default function AboutPage() {
               title="Desde 2013 executando soluções em metal"
               description="A Metalúrgica Marinox iniciou suas atividades em 02/01/2013 realizando projetos e executando soluções para seus clientes."
             />
-            <div>
-              <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-zinc-100">
-                <Image src="/marinox-assets/assets-images-banners-1.jpg" alt="Registro provisório da Marinox" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
-              </div>
-              <p className="mt-3 text-xs text-zinc-500">{assetNote}</p>
+            <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-zinc-100">
+              <Image src="/marinox-assets/assets-images-banners-1.jpg" alt="Estrutura e atuação da Marinox" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
             </div>
           </div>
         </section>
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
             {[
-              ['Propósito', 'Fornecer solução e execução para projetos que envolvem estruturas, esquadrias e artefatos metálicos.'],
-              ['Valores', 'Respeito aos clientes e respeito aos colaboradores.'],
-              ['Atendimento nacional', 'Área de atendimento preparada para demandas em todo o Brasil.'],
+              ['Propósito', 'Transformar necessidades de projeto em soluções metálicas executadas com clareza e compromisso.'],
+              ['Valores', 'Respeito aos clientes e colaboradores em todas as etapas do relacionamento e da execução.'],
+              ['Atendimento nacional', 'Atuação preparada para atender demandas e projetos em todo o Brasil.'],
             ].map(([title, text]) => (
               <article key={title} className="rounded-lg border border-zinc-200 bg-white p-6">
                 <h2 className="text-2xl font-semibold text-zinc-950">{title}</h2>
@@ -49,7 +45,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl">
             <SectionTitle eyebrow="Compromisso" title="Atendimento, prazo e qualidade como pilares" />
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-600">
-              A primeira versão do site apresenta os compromissos informados pela Marinox sem acrescentar certificações, números, obras ou capacidades produtivas ainda não confirmadas.
+              Cada projeto começa pelo entendimento da necessidade do cliente e avança com atenção ao planejamento, à execução e à entrega. É assim que a Marinox busca construir relações de confiança e soluções consistentes.
             </p>
           </div>
         </section>

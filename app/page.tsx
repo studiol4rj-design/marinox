@@ -34,32 +34,42 @@ export default function Home() {
     <>
       <SiteHeader />
       <main>
-        <section className="relative overflow-hidden bg-white">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-[1fr_.9fr] md:items-center lg:px-8 lg:py-24">
-            <div>
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-red-700">Metalúrgica Marinox</p>
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 md:text-7xl">
-                Soluções em metal. Projetos que ganham forma.
+        <section className="relative isolate min-h-[620px] overflow-hidden bg-zinc-100 md:min-h-[720px]">
+          <Image
+            src="/marinox-assets/ilha-plaza.jpeg"
+            alt="Projeto executado pela Metalúrgica Marinox"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/25 via-transparent to-white/5" />
+
+          <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-20 md:min-h-[720px] lg:px-8">
+            <div className="max-w-4xl">
+              <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-red-700">
+                Metalúrgica Marinox · Desde 2013
+              </p>
+              <h1 className="max-w-4xl text-5xl font-bold leading-[0.96] tracking-[-0.045em] text-zinc-950 sm:text-6xl md:text-7xl lg:text-[5.6rem]">
+                Soluções em metal.
+                <span className="block text-red-700">Projetos que ganham forma.</span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
+              <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-zinc-800 md:text-xl">
                 Estruturas metálicas, esquadrias e artefatos sob medida para empresas, construtoras e projetos que exigem execução com atendimento, prazo e qualidade.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contato" className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-red-700 px-5 text-sm font-medium text-white transition hover:bg-red-800">
-                  Fale sobre seu projeto <ArrowRight className="size-4" />
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link href="/contato" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-700 px-6 text-sm font-semibold text-white shadow-lg shadow-red-950/10 transition hover:bg-red-800">
+                  Solicite um orçamento <ArrowRight className="size-4" />
                 </Link>
-                <Link href="/projetos" className="inline-flex h-11 items-center justify-center rounded-lg border border-zinc-300 px-5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50">
+                <Link href="/projetos" className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-400/70 bg-white/80 px-6 text-sm font-semibold text-zinc-950 backdrop-blur-sm transition hover:bg-white">
                   Conheça nossos projetos
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute -left-5 top-8 hidden h-32 w-2 bg-red-700 md:block" />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-zinc-100 shadow-2xl shadow-zinc-900/10 md:aspect-[5/6]">
-                <Image src="/marinox-assets/assets-images-sliders-3.jpg" alt="Obra metálica da Marinox" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
-              </div>
-            </div>
           </div>
+
+          <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-transparent" />
         </section>
 
         <section className="border-y border-zinc-200 bg-zinc-50 px-5 py-16 lg:px-8">

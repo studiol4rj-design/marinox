@@ -2,10 +2,11 @@ export const contact = {
   whatsappLabel: '(21) 2303-9875',
   whatsappNumber: '552123039875',
   email: 'comercial@marinoxmetalurgica.com.br',
-  address: 'Atendimento em todo o Brasil',
+  address: 'Estrada Gericinó s/n, Anexo Caminho das Amendoeiras, Lt. 2, Bangu — Rio de Janeiro/RJ — CEP 21.853-000',
   instagram: '#',
   facebook: '#',
-  mapLabel: 'Atendimento nacional',
+  mapLabel: 'Metalúrgica Marinox — Bangu, Rio de Janeiro/RJ',
+  mapUrl: 'https://maps.google.com/maps?q=-22.849008560180664%2C-43.47621154785156&z=17&hl=pt-BR',
 };
 
 export const navItems = [

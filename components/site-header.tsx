@@ -11,12 +11,12 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8 lg:py-4">
         <Link href="/" className="flex items-center" aria-label="Metalúrgica Marinox">
           <Image
-            src="/marinox-assets/assets-images-logo-Logo-Marinox.png"
+            src="/marinox-assets/logo.png"
             alt="Metalúrgica Marinox"
-            width={146}
-            height={44}
+            width={220}
+            height={76}
             priority
-            className="h-10 w-auto bg-transparent object-contain mix-blend-multiply sm:h-11"
+            className="h-10 w-auto object-contain sm:h-11"
           />
         </Link>
 

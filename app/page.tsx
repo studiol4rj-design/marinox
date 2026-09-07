@@ -36,7 +36,7 @@ export default function Home() {
       <main>
         <section className="relative isolate min-h-[620px] overflow-hidden bg-zinc-100 md:min-h-[720px]">
           <Image
-            src="/marinox-assets/ilha-plaza.jpeg"
+            src="/marinox-assets/copa-palace.jpeg"
             alt="Projeto executado pela Metalúrgica Marinox"
             fill
             priority

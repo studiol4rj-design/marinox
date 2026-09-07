@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile, access } from 'node:fs/promises';
+import { cp, mkdir, rm, writeFile, access, readdir } from 'node:fs/promises';
 import { constants } from 'node:fs';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
@@ -58,10 +58,14 @@ function outputFileForRoute(route) {
   return path.join(outputDir, route.replace(/^\//, ''), 'index.html');
 }
 
+function normalizePublicAssetUrls(html) {
+  return html.replaceAll('/marinox-assets/', `${basePath}/marinox-assets/`);
+}
+
 async function renderRoute(route) {
   const url = `${origin}${basePath}${route}`;
   const response = await fetch(url, { redirect: 'follow' });
-  const html = await response.text();
+  let html = await response.text();
 
   if (!response.ok) {
     throw new Error(`Falha ao renderizar ${route}: HTTP ${response.status}`);
@@ -71,10 +75,26 @@ async function renderRoute(route) {
     throw new Error(`Resposta de ${route} nao parece ser HTML valido.`);
   }
 
+  html = normalizePublicAssetUrls(html);
+
   const destination = outputFileForRoute(route);
   await mkdir(path.dirname(destination), { recursive: true });
   await writeFile(destination, html, 'utf8');
   console.log(`Exportado ${route}`);
+}
+
+async function flattenBasePathAssets() {
+  const nestedBasePathDir = path.join(outputDir, basePath.replace(/^\//, ''));
+  if (!(await exists(nestedBasePathDir))) return;
+
+  const entries = await readdir(nestedBasePathDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const source = path.join(nestedBasePathDir, entry.name);
+    const destination = path.join(outputDir, entry.name);
+    await cp(source, destination, { recursive: true, force: true });
+  }
+
+  await rm(nestedBasePathDir, { recursive: true, force: true });
 }
 
 async function stopServer(server) {
@@ -101,6 +121,7 @@ if (!(await exists(clientDir))) {
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await cp(clientDir, outputDir, { recursive: true });
+await flattenBasePathAssets();
 
 const wranglerScript = path.join(root, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
 const server = spawn(
@@ -126,8 +147,12 @@ try {
   await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
 
   const indexPath = path.join(outputDir, 'index.html');
+  const cssDir = path.join(outputDir, '_next', 'static', 'css');
   if (!(await exists(indexPath))) {
     throw new Error('Export final invalido: pages-dist/index.html nao foi gerado.');
+  }
+  if (!(await exists(cssDir))) {
+    throw new Error('Export final invalido: assets CSS nao foram publicados na raiz esperada.');
   }
 
   console.log(`Export concluido: ${routes.length} rotas em pages-dist.`);

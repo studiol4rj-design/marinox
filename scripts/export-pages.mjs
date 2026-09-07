@@ -77,6 +77,23 @@ async function renderRoute(route) {
   console.log(`Exportado ${route}`);
 }
 
+async function stopServer(server) {
+  if (server.exitCode !== null) return;
+
+  server.kill('SIGTERM');
+  const exited = await Promise.race([
+    new Promise((resolve) => server.once('exit', () => resolve(true))),
+    new Promise((resolve) => setTimeout(() => resolve(false), 2_000)),
+  ]);
+
+  if (!exited && server.exitCode === null) {
+    server.kill('SIGKILL');
+  }
+
+  server.stdout?.destroy();
+  server.stderr?.destroy();
+}
+
 if (!(await exists(clientDir))) {
   throw new Error('dist/client nao existe. Execute npm run build antes de npm run build:pages.');
 }
@@ -85,10 +102,10 @@ await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await cp(clientDir, outputDir, { recursive: true });
 
-const wranglerBin = process.platform === 'win32' ? 'npx.cmd' : 'npx';
+const wranglerScript = path.join(root, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
 const server = spawn(
-  wranglerBin,
-  ['wrangler', 'dev', '--config', 'dist/server/wrangler.json', '--port', String(port), '--local'],
+  process.execPath,
+  [wranglerScript, 'dev', '--config', 'dist/server/wrangler.json', '--port', String(port), '--local'],
   {
     cwd: root,
     env: { ...process.env, GITHUB_PAGES_DEPLOY: 'true' },
@@ -115,7 +132,5 @@ try {
 
   console.log(`Export concluido: ${routes.length} rotas em pages-dist.`);
 } finally {
-  server.kill('SIGTERM');
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  if (!server.killed) server.kill('SIGKILL');
+  await stopServer(server);
 }

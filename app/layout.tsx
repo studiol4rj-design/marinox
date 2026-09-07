@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   },
   description:
     'Soluções em estruturas metálicas, esquadrias e artefatos de metais para projetos em todo o Brasil.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'Metalúrgica Marinox',
     description:

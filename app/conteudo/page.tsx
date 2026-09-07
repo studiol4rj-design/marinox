@@ -10,7 +10,7 @@ import { articles } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'Conteúdo',
-  description: 'Base de conteúdo e SEO da Marinox para temas comerciais sobre projetos metálicos.',
+  description: 'Conteúdos da Marinox sobre projetos metálicos, orçamento e execução.',
 };
 
 export default function ContentPage() {
@@ -20,7 +20,7 @@ export default function ContentPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Conteúdo" title="Base editorial para SEO e atendimento comercial" description="Poucos conteúdos demonstrativos, prontos para revisão e substituição por artigos definitivos." />
+            <SectionTitle eyebrow="Conteúdo" title="Informação para planejar melhor seu projeto" description="Conteúdos sobre orçamento, planejamento e execução para ajudar empresas e profissionais a organizar suas demandas em soluções metálicas." />
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {articles.map((article) => (
                 <Link key={article.slug} href={`/conteudo/${article.slug}`} className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 transition hover:border-red-200 hover:bg-white">

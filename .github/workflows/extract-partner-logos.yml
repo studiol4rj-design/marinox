@@ -9,6 +9,9 @@ jobs:
   extract:
     runs-on: ubuntu-latest
     steps:
+      - name: Install parser dependencies
+        run: python -m pip install --quiet requests beautifulsoup4
+
       - name: Extract official logo candidates
         shell: bash
         run: |
@@ -45,7 +48,6 @@ jobs:
               soup = BeautifulSoup(r.text, 'html.parser')
               candidates = []
 
-              # images and SVG/object references
               for tag in soup.find_all(['img','source','object','image']):
                   vals=[]
                   for attr in ('src','data-src','data-lazy-src','href','data'):
@@ -68,13 +70,11 @@ jobs:
                       if re.search(r'\.(svg|png|webp|jpe?g)(\?|$)', lu): score+=4
                       candidates.append((score,u,text))
 
-              # referenced assets in raw HTML/CSS
               for m in re.findall(r'https?://[^\"\'\s)<>]+', r.text):
                   lm=m.lower()
                   if 'logo' in lm and re.search(r'\.(svg|png|webp|jpe?g)(\?|$)', lm):
                       candidates.append((25,m,'raw-html'))
 
-              # dedupe, highest score first
               seen=set(); ranked=[]
               for score,u,text in sorted(candidates, reverse=True):
                   if u in seen: continue
@@ -82,7 +82,7 @@ jobs:
 
               manifest[key]={'page':page_url,'candidates':[]}
               saved=0
-              for score,u,text in ranked[:20]:
+              for score,u,text in ranked[:30]:
                   try:
                       rr=session.get(u, timeout=30)
                       if rr.status_code != 200 or not rr.content: continue
@@ -91,10 +91,10 @@ jobs:
                       ext=ext_from(rr,u)
                       fn=f'{key}-{saved+1:02d}{ext}'
                       with open(os.path.join('logos',fn),'wb') as f: f.write(rr.content)
-                      manifest[key]['candidates'].append({'file':fn,'score':score,'url':u,'content_type':ctype,'bytes':len(rr.content)})
+                      manifest[key]['candidates'].append({'file':fn,'score':score,'url':u,'content_type':ctype,'bytes':len(rr.content),'alt':text})
                       saved += 1
-                      if saved >= 8: break
-                  except Exception as e:
+                      if saved >= 10: break
+                  except Exception:
                       pass
 
           with open('logos/manifest.json','w',encoding='utf-8') as f:

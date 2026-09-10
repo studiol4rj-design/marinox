@@ -26,12 +26,12 @@ const featuredClients = [
   { name: 'Smart Fit', logo: '/marinox-assets/clientes/smartfit.png', featured: true },
   { name: 'Colégio Santo Agostinho', logo: '/marinox-assets/clientes/santo-agostinho.png', featured: true },
   { name: 'Restaurante Galezzo', logo: '/marinox-assets/clientes/galezzo.png', featured: true },
-  { name: 'Habitte Engenharia', logo: '/marinox-assets/clientes/habitte.jpg', featured: true },
-  { name: 'LAR Construtora', logo: '/marinox-assets/clientes/lar-construtora.svg', featured: false },
-  { name: 'Baggio & Carvalho', logo: '/marinox-assets/clientes/baggio-carvalho.png', featured: false },
-  { name: 'Ramfej', logo: '/marinox-assets/clientes/ramfej.png', featured: false },
-  { name: 'Retrofit Engenharia', logo: '/marinox-assets/clientes/retrofit.png', featured: false },
-  { name: 'Saeng', logo: '/marinox-assets/clientes/saeng.png', featured: true },
+  { name: 'Habitte Engenharia', logo: '/marinox-assets/clientes/habitte.jpg', featured: true, logoClass: 'max-h-16 w-full max-w-56 object-contain sm:max-h-20 sm:max-w-60' },
+  { name: 'LAR Construtora', logo: '/marinox-assets/clientes/lar-construtora.svg', featured: false, logoClass: 'max-h-16 w-full max-w-32 object-contain sm:max-h-20 sm:max-w-36' },
+  { name: 'Baggio & Carvalho', logo: '/marinox-assets/clientes/baggio-carvalho.png', featured: false, logoClass: 'max-h-16 w-full max-w-20 object-contain sm:max-h-20 sm:max-w-24' },
+  { name: 'Ramfej', logo: '/marinox-assets/clientes/ramfej.png', featured: false, logoClass: 'max-h-16 w-full max-w-48 object-contain sm:max-h-20 sm:max-w-56' },
+  { name: 'Retrofit Engenharia', logo: '/marinox-assets/clientes/retrofit.png', featured: false, logoClass: 'max-h-16 w-full max-w-36 object-contain sm:max-h-20 sm:max-w-44' },
+  { name: 'Saeng', logo: '/marinox-assets/clientes/saeng.png', featured: true, logoClass: 'max-h-14 w-full max-w-44 object-contain sm:max-h-16 sm:max-w-48' },
 ];
 const process = ['Entendimento do projeto', 'Planejamento', 'Fabricação', 'Execução', 'Entrega'];
 
@@ -70,7 +70,7 @@ export default function Home() {
                       width={520}
                       height={190}
                       sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
-                      className={client.featured ? 'max-h-32 w-full scale-110 object-contain sm:max-h-36' : 'max-h-28 w-full object-contain sm:max-h-32'}
+                      className={client.logoClass ?? (client.featured ? 'max-h-32 w-full scale-110 object-contain sm:max-h-36' : 'max-h-28 w-full object-contain sm:max-h-32')}
                     />
                   </div>
                 </div>

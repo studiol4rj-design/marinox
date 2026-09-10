@@ -26,6 +26,12 @@ const featuredClients = [
   { name: 'Smart Fit', logo: '/marinox-assets/clientes/smartfit.png', featured: true },
   { name: 'Colégio Santo Agostinho', logo: '/marinox-assets/clientes/santo-agostinho.png', featured: true },
   { name: 'Restaurante Galezzo', logo: '/marinox-assets/clientes/galezzo.png', featured: true },
+  { name: 'Habitte Engenharia', logo: '/marinox-assets/clientes/habitte.jpg', featured: true },
+  { name: 'LAR Construtora', logo: '/marinox-assets/clientes/lar-construtora.svg', featured: false },
+  { name: 'Baggio & Carvalho', logo: '/marinox-assets/clientes/baggio-carvalho.png', featured: false },
+  { name: 'Ramfej', logo: '/marinox-assets/clientes/ramfej.png', featured: false },
+  { name: 'Retrofit Engenharia', logo: '/marinox-assets/clientes/retrofit.png', featured: false },
+  { name: 'Saeng', logo: '/marinox-assets/clientes/saeng.png', featured: true },
 ];
 const process = ['Entendimento do projeto', 'Planejamento', 'Fabricação', 'Execução', 'Entrega'];
 
@@ -54,7 +60,7 @@ export default function Home() {
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A confiança de empresas de referência em diversos segmentos reforça o compromisso da Marinox com atendimento, prazo e qualidade em cada projeto.</p>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">
+            <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-6">
               {featuredClients.map((client) => (
                 <div key={client.name} className="flex h-36 items-center justify-center sm:h-40">
                   <div className="flex h-28 w-full items-center justify-center sm:h-32">

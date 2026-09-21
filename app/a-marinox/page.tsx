@@ -23,7 +23,7 @@ export default function AboutPage() {
               description="A Metalúrgica Marinox iniciou suas atividades em 02/01/2013 realizando projetos e executando soluções para seus clientes."
             />
             <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-zinc-100">
-              <Image src="/marinox-assets/assets-images-banners-1.jpg" alt="Estrutura e atuação da Marinox" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+              <Image src="/marinox-assets/ilha-plaza-sobre.png" alt="Estrutura e atuação da Marinox" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
             </div>
           </div>
         </section>

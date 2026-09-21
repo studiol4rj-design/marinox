@@ -1,7 +1,7 @@
 export const contact = {
   whatsappLabel: '(21) 97015-9565',
   whatsappNumber: '5521970159565',
-  email: 'comercial@marinoxmetalurgica.com.br',
+  email: 'marivaldojalmeida@gmail.com',
   address: 'Estrada Gericinó s/n, Anexo Caminho das Amendoeiras, Lt. 2, Bangu — Rio de Janeiro/RJ — CEP 21.853-000',
   instagram: '#',
   facebook: '#',

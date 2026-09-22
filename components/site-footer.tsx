@@ -23,7 +23,7 @@ export function SiteFooter() {
           <h2 className="mb-4 text-sm font-semibold uppercase text-zinc-700">Navegação</h2>
           <div className="grid gap-2 text-sm text-zinc-600">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-red-700">
+              <Link prefetch={false} key={item.href} href={item.href} className="transition hover:text-red-700">
                 {item.label}
               </Link>
             ))}
@@ -64,11 +64,11 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-            <Link href="/politica-de-privacidade" className="transition hover:text-red-700">
+            <Link prefetch={false} href="/politica-de-privacidade" className="transition hover:text-red-700">
               Política de Privacidade
             </Link>
             <span className="text-zinc-400">|</span>
-            <Link href="/termos-de-uso" className="transition hover:text-red-700">
+            <Link prefetch={false} href="/termos-de-uso" className="transition hover:text-red-700">
               Termos de Uso
             </Link>
           </div>

@@ -10,6 +10,7 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
   description:
     'Soluções em estruturas metálicas, esquadrias e artefatos de metais para projetos em todo o Brasil.',
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/marinox-assets/icon.png',
+    shortcut: '/marinox-assets/icon.png',
+    apple: '/marinox-assets/icon.png',
   },
   openGraph: {
     title: 'Metalúrgica Marinox',

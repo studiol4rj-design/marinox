@@ -17,7 +17,7 @@ export default function AboutPage() {
       <main>
         <section className="bg-white px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[.9fr_1fr] md:items-center">
-            <SectionTitle
+            <SectionTitle as="h1"
               eyebrow="A Marinox"
               title="Desde 2013 executando soluções em metal"
               description="A Metalúrgica Marinox iniciou suas atividades em 02/01/2013 realizando projetos e executando soluções para seus clientes."

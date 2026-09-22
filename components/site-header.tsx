@@ -9,7 +9,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8 lg:py-4">
-        <Link href="/" className="flex items-center" aria-label="Metalúrgica Marinox">
+        <Link prefetch={false} href="/" className="flex items-center" aria-label="Metalúrgica Marinox">
           <Image
             src="/marinox-assets/logo.png"
             alt="Metalúrgica Marinox"
@@ -22,7 +22,7 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-7 text-sm font-medium text-zinc-700 lg:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-red-700">
+            <Link prefetch={false} key={item.href} href={item.href} className="transition hover:text-red-700">
               {item.label}
             </Link>
           ))}
@@ -47,7 +47,7 @@ export function SiteHeader() {
           <div className="absolute right-0 top-[calc(100%+0.75rem)] w-64 overflow-hidden rounded-xl border border-zinc-200 bg-white p-2 shadow-xl">
             <nav className="grid text-sm font-medium text-zinc-700">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg px-4 py-3 transition hover:bg-zinc-50 hover:text-red-700">
+                <Link prefetch={false} key={item.href} href={item.href} className="rounded-lg px-4 py-3 transition hover:bg-zinc-50 hover:text-red-700">
                   {item.label}
                 </Link>
               ))}

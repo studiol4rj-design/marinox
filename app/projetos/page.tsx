@@ -18,9 +18,9 @@ export default function ProjectsPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Projetos" title="Soluções metálicas aplicadas a diferentes demandas" description="Conheça trabalhos e aplicações que representam a atuação da Marinox em estruturas, esquadrias e artefatos metálicos." />
+            <SectionTitle as="h1" eyebrow="Projetos" title="Soluções metálicas aplicadas a diferentes demandas" description="Conheça trabalhos e aplicações que representam a atuação da Marinox em estruturas, esquadrias e artefatos metálicos." />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+              {projects.map((project) => <ProjectCard key={project.slug} project={project} heading="h2" />)}
             </div>
           </div>
         </section>

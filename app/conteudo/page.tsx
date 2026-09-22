@@ -20,10 +20,10 @@ export default function ContentPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Conteúdo" title="Informação para planejar melhor seu projeto" description="Conteúdos sobre orçamento, planejamento e execução para ajudar empresas e profissionais a organizar suas demandas em soluções metálicas." />
+            <SectionTitle as="h1" eyebrow="Conteúdo" title="Informação para planejar melhor seu projeto" description="Conteúdos sobre orçamento, planejamento e execução para ajudar empresas e profissionais a organizar suas demandas em soluções metálicas." />
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {articles.map((article) => (
-                <Link key={article.slug} href={`/conteudo/${article.slug}`} className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 transition hover:border-red-200 hover:bg-white">
+                <Link prefetch={false} key={article.slug} href={`/conteudo/${article.slug}`} className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 transition hover:border-red-200 hover:bg-white">
                   <Badge className="bg-white text-zinc-700 hover:bg-white">{article.category}</Badge>
                   <h2 className="mt-5 text-2xl font-semibold text-zinc-950">{article.title}</h2>
                   <p className="mt-4 leading-7 text-zinc-600">{article.excerpt}</p>

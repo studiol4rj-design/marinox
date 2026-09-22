@@ -18,11 +18,11 @@ export default function FaqPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.8fr_1fr]">
-            <SectionTitle eyebrow="FAQ" title="Perguntas frequentes" description="Respostas objetivas para apoiar o início da conversa comercial." />
+            <SectionTitle as="h1" eyebrow="FAQ" title="Perguntas frequentes" description="Respostas objetivas para apoiar o início da conversa comercial." />
             <Accordion className="rounded-lg border border-zinc-200 bg-zinc-50 p-4">
               {faqs.map((faq) => (
                 <AccordionItem key={faq.question}>
-                  <AccordionTrigger className="text-base">{faq.question}</AccordionTrigger>
+                  <AccordionTrigger headingLevel={2} className="text-base">{faq.question}</AccordionTrigger>
                   <AccordionContent className="text-base leading-7 text-zinc-600">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}

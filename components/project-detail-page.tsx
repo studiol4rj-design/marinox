@@ -40,7 +40,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                 </div>
               ))}
             </div>
-            <Link href="/contato" className="mt-10 inline-flex items-center gap-2 font-semibold text-red-700">
+            <Link prefetch={false} href="/contato" className="mt-10 inline-flex items-center gap-2 font-semibold text-red-700">
               Falar sobre um projeto semelhante <ArrowRight className="size-4" />
             </Link>
           </div>

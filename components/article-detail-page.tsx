@@ -20,7 +20,7 @@ export function ArticleDetailPage({ slug }: { slug: string }) {
           <div className="mt-10 space-y-6 text-lg leading-8 text-zinc-700">
             {article.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
-          <Link href="/contato" className="mt-10 inline-flex items-center gap-2 font-semibold text-red-700">
+          <Link prefetch={false} href="/contato" className="mt-10 inline-flex items-center gap-2 font-semibold text-red-700">
             Falar sobre seu projeto <ArrowRight className="size-4" />
           </Link>
         </article>

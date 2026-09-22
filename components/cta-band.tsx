@@ -11,7 +11,7 @@ export function CtaBand() {
           <h2 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">Tem um projeto? Vamos conversar.</h2>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href="/contato" className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-red-700 px-3 text-sm font-medium text-white transition hover:bg-red-800">
+          <Link prefetch={false} href="/contato" className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-red-700 px-3 text-sm font-medium text-white transition hover:bg-red-800">
             Solicite um orçamento <ArrowRight className="size-4" />
           </Link>
           <a href={`https://wa.me/${contact.whatsappNumber}`} target="_blank" rel="noreferrer" className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-white/30 px-3 text-sm font-medium text-white transition hover:bg-white hover:text-zinc-950">

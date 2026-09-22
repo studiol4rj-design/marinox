@@ -20,13 +20,13 @@ export default function SolutionsPage() {
       <main className="bg-white">
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionTitle eyebrow="Soluções" title="Soluções sob medida para diferentes projetos" description="Estruturas, esquadrias e artefatos metálicos desenvolvidos para atender às necessidades de empresas, construtoras e projetos de arquitetura." />
+            <SectionTitle as="h1" eyebrow="Soluções" title="Soluções sob medida para diferentes projetos" description="Estruturas, esquadrias e artefatos metálicos desenvolvidos para atender às necessidades de empresas, construtoras e projetos de arquitetura." />
           </div>
         </section>
         <section className="px-5 pb-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8">
             {solutions.map((solution) => (
-              <article id={solution.slug} key={solution.slug} className="grid gap-6 rounded-lg border border-zinc-200 bg-zinc-50 p-5 md:grid-cols-[.85fr_1fr] md:items-center">
+              <article id={solution.slug} key={solution.slug} className="scroll-mt-24 grid gap-6 rounded-lg border border-zinc-200 bg-zinc-50 p-5 md:grid-cols-[.85fr_1fr] md:items-center">
                 <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-zinc-100">
                   <Image src={solution.image} alt={solution.title} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
                 </div>
@@ -38,10 +38,10 @@ export default function SolutionsPage() {
                     {solution.applications.map((item) => <li key={item}>• {item}</li>)}
                   </ul>
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <Link href="/contato" className="inline-flex items-center gap-2 font-semibold text-red-700">
+                    <Link prefetch={false} href="/contato" className="inline-flex items-center gap-2 font-semibold text-red-700">
                       Falar sobre esta solução <ArrowRight className="size-4" />
                     </Link>
-                    <Link href="/projetos" className="inline-flex items-center gap-2 font-semibold text-zinc-700">
+                    <Link prefetch={false} href="/projetos" className="inline-flex items-center gap-2 font-semibold text-zinc-700">
                       Ver projetos relacionados
                     </Link>
                   </div>

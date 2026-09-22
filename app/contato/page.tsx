@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { Download, ExternalLink, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { BookOpen, ExternalLink, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { SectionTitle } from '@/components/section-title';
 import { SiteFooter } from '@/components/site-footer';
@@ -20,7 +20,7 @@ export default function ContactPage() {
         <section className="px-5 py-16 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1fr]">
             <div>
-              <SectionTitle eyebrow="Contato" title="Fale sobre seu projeto" description="Envie as informações iniciais da sua demanda e a Marinox poderá avaliar o melhor caminho para o orçamento e a execução." />
+              <SectionTitle as="h1" eyebrow="Contato" title="Fale sobre seu projeto" description="Envie as informações iniciais da sua demanda e a Marinox poderá avaliar o melhor caminho para o orçamento e a execução." />
               <div className="mt-8 grid gap-3 text-zinc-700">
                 <a href={`https://wa.me/${contact.whatsappNumber}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-lg border border-zinc-200 p-4 hover:border-red-200">
                   <Phone className="size-5 shrink-0 text-red-700" /> {contact.whatsappLabel}
@@ -35,7 +35,7 @@ export default function ContactPage() {
                 </a>
               </div>
               <div className="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-5">
-                <Download className="mb-3 size-5 text-red-700" />
+                <BookOpen className="mb-3 size-5 text-red-700" />
                 <h2 className="font-semibold text-zinc-950">Catálogo Marinox</h2>
                 <p className="mt-2 text-sm leading-6 text-zinc-600">Conheça as principais soluções e aplicações da Marinox em estruturas, esquadrias e artefatos metálicos.</p>
               </div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_.8fr] md:items-center">
             <a href={contact.mapUrl} target="_blank" rel="noreferrer" className="group relative aspect-[16/9] overflow-hidden rounded-lg border border-zinc-200 bg-zinc-300" aria-label="Abrir localização da Marinox no Google Maps">
               <Image src="/marinox-assets/assets-images-backgrounds-map.png" alt={contact.mapLabel} fill sizes="(min-width: 768px) 55vw, 100vw" className="object-cover opacity-70 transition group-hover:opacity-85" />
-              <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 shadow-md">
+              <span className="absolute bottom-4 left-4 max-sm:max-w-[calc(100%-2rem)] inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 shadow-md">
                 <MapPin className="size-4 text-red-700" /> Ver localização no Google Maps
               </span>
             </a>

@@ -153,6 +153,7 @@ try {
   }
 
   await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
+  await writeFile(path.join(outputDir, 'CNAME'), 'www.marinoxmetalurgica.com.br\n', 'utf8');
   await writeFile(path.join(outputDir, 'robots.txt'),
     'User-agent: *\nAllow: /\nSitemap: ' + canonicalOrigin + '/sitemap.xml\n', 'utf8');
   const xmlEscape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;');

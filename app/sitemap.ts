@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { articles, projects } from '@/lib/site-data';
 
-const baseUrl = 'https://marinox-metalurgica.tuned-civet-0855.chatgpt.site';
+const baseUrl = 'https://www.marinoxmetalurgica.com.br';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ['', '/a-marinox', '/solucoes', '/projetos', '/conteudo', '/faq', '/contato'];

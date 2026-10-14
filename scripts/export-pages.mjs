@@ -154,12 +154,12 @@ try {
 
   await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
   await writeFile(path.join(outputDir, 'robots.txt'),
-    'User-agent: *\\nAllow: /\\nSitemap: ' + canonicalOrigin + '/sitemap.xml\\n', 'utf8');
+    'User-agent: *\nAllow: /\nSitemap: ' + canonicalOrigin + '/sitemap.xml\n', 'utf8');
   const xmlEscape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
-  const sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\\n' +
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n' +
-    routes.map((route) => '  <url><loc>' + xmlEscape(canonicalOrigin + route) + '</loc></url>').join('\\n') +
-    '\\n</urlset>\\n';
+  const sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    routes.map((route) => '  <url><loc>' + xmlEscape(canonicalOrigin + route) + '</loc></url>').join('\n') +
+    '\n</urlset>\n';
   await writeFile(path.join(outputDir, 'sitemap.xml'), sitemapXml, 'utf8');
 
   const indexPath = path.join(outputDir, 'index.html');

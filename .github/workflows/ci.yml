@@ -41,6 +41,7 @@ jobs:
           test -f pages-dist/index.html
           test -f pages-dist/sitemap.xml
           test -f pages-dist/robots.txt
+          grep -qx 'www.marinoxmetalurgica.com.br' pages-dist/CNAME
           test -d pages-dist/_next/static/css
           ! grep -q 'tuned-civet-0855' pages-dist/index.html
           ! grep -q '/marinox/_next' pages-dist/index.html

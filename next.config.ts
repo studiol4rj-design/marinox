@@ -1,10 +1,8 @@
 import type { NextConfig } from 'next';
 
-const isGitHubPages = process.env.GITHUB_PAGES_DEPLOY === 'true';
-
 const nextConfig: NextConfig = {
-  basePath: isGitHubPages ? '/marinox' : '',
-  assetPrefix: isGitHubPages ? '/marinox' : undefined,
+  basePath: '',
+  assetPrefix: undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,

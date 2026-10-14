@@ -8,7 +8,8 @@ const clientDir = path.join(root, 'dist', 'client');
 const outputDir = path.join(root, 'pages-dist');
 const port = 8787;
 const origin = `http://127.0.0.1:${port}`;
-const basePath = '/marinox';
+const basePath = '';
+const canonicalOrigin = 'https://www.marinoxmetalurgica.com.br';
 
 const routes = [
   '/',
@@ -59,11 +60,11 @@ function outputFileForRoute(route) {
 }
 
 function normalizePublicAssetUrls(html) {
-  return html.replaceAll('/marinox-assets/', `${basePath}/marinox-assets/`);
+  return html;
 }
 
 function forceDocumentNavigationOnPages(html) {
-  const script = `<script data-github-pages-navigation>(function(){window.addEventListener('click',function(event){if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest('a[href]');if(!anchor||anchor.hasAttribute('download')||anchor.target&&anchor.target!=='_self')return;var url=new URL(anchor.href,window.location.href);if(url.origin!==window.location.origin||!url.pathname.startsWith('${basePath}'))return;if(url.pathname===window.location.pathname&&url.search===window.location.search&&url.hash)return;event.preventDefault();event.stopImmediatePropagation();window.location.assign(url.href);},true);})();</script>`;
+  const script = `<script data-github-pages-navigation>(function(){window.addEventListener('click',function(event){if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest('a[href]');if(!anchor||anchor.hasAttribute('download')||anchor.target&&anchor.target!=='_self')return;var url=new URL(anchor.href,window.location.href);if(url.origin!==window.location.origin)return;if(url.pathname===window.location.pathname&&url.search===window.location.search&&url.hash)return;event.preventDefault();event.stopImmediatePropagation();window.location.assign(url.href);},true);})();</script>`;
 
   return html.includes('</head>') ? html.replace('</head>', `${script}</head>`) : `${script}${html}`;
 }
@@ -152,6 +153,14 @@ try {
   }
 
   await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
+  await writeFile(path.join(outputDir, 'robots.txt'),
+    'User-agent: *\\nAllow: /\\nSitemap: ' + canonicalOrigin + '/sitemap.xml\\n', 'utf8');
+  const xmlEscape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
+  const sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n' +
+    routes.map((route) => '  <url><loc>' + xmlEscape(canonicalOrigin + route) + '</loc></url>').join('\\n') +
+    '\\n</urlset>\\n';
+  await writeFile(path.join(outputDir, 'sitemap.xml'), sitemapXml, 'utf8');
 
   const indexPath = path.join(outputDir, 'index.html');
   const cssDir = path.join(outputDir, '_next', 'static', 'css');

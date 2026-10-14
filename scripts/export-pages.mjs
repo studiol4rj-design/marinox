@@ -129,7 +129,7 @@ if (!(await exists(clientDir))) {
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await cp(clientDir, outputDir, { recursive: true });
-await flattenBasePathAssets();
+if (basePath) await flattenBasePathAssets();
 
 const wranglerScript = path.join(root, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
 const server = spawn(

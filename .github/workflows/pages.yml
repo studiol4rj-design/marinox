@@ -46,7 +46,9 @@ jobs:
         run: |
           test -f pages-dist/index.html
           test -f pages-dist/.nojekyll
-          grep -q '/marinox' pages-dist/index.html
+          test -f pages-dist/robots.txt
+          test -f pages-dist/sitemap.xml
+          ! grep -q 'tuned-civet-0855' pages-dist/index.html
           echo "GitHub Pages artifact validated."
 
       - name: Setup Pages

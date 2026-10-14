@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://marinox-metalurgica.tuned-civet-0855.chatgpt.site'),
+  metadataBase: new URL('https://www.marinoxmetalurgica.com.br'),
   title: {
     default: 'Metalúrgica Marinox | Soluções em metal',
     template: '%s | Metalúrgica Marinox',
@@ -31,11 +31,13 @@ export const metadata: Metadata = {
     shortcut: '/marinox-assets/icon.png',
     apple: '/marinox-assets/icon.png',
   },
+  alternates: { canonical: './' },
   openGraph: {
     title: 'Metalúrgica Marinox',
     description:
       'Soluções em estruturas metálicas, esquadrias e artefatos de metais para projetos em todo o Brasil.',
     type: 'website',
+    url: 'https://www.marinoxmetalurgica.com.br',
     locale: 'pt_BR',
   },
 };
